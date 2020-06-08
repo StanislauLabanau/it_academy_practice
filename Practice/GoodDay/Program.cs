@@ -6,24 +6,22 @@ namespace GoodDay
     {
         static void Main(string[] args)
         {
-            int count = 0;
+            string morningGreetings = "Good morning, guys!";
+            string dayGreetings = "Good day, guys!";
+            string eveningGreetings = "Good evening, guys!";
+            string nightGreetings = "Good night, guys!";
 
-            Console.WriteLine("enter the word");
+            string currentGreetings = nightGreetings;
 
-            string wordConsole = Console.ReadLine();
+            TimeSpan currentTime = DateTime.Now.TimeOfDay;
+            int currentHours = currentTime.Hours;
 
-            for (int i = 0; i < wordConsole.Length; i++)
-            {
-                if (wordConsole[i] == 'a')
-                {
-                    count++;
-                }
-            }
+            if (currentHours>=9 && currentHours<12) { currentGreetings = morningGreetings; }
+            if (currentHours>=12 && currentHours<15) { currentGreetings = dayGreetings; }
+            if (currentHours>=15 && currentHours<22) { currentGreetings = eveningGreetings; }
 
-            Console.WriteLine("word " + wordConsole + " has " + count + " letters a");
+            Console.WriteLine(currentGreetings);
             Console.ReadKey();
-
-
         }
     }
 }
