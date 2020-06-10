@@ -67,7 +67,7 @@ namespace Lecture._6
             short someShort = 5;
             System.SByte someSbyte = 0;
             object someObject = someShort;
-            someSbyte = (System.SByte)someObject;
+            someSbyte = (System.SByte)(short)someObject;
             Console.WriteLine("Boxing unboxing omplited");
         }
     }
