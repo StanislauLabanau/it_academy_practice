@@ -10,7 +10,7 @@ namespace Lecture._6
 
             MixArray();
 
-
+            MaxArray();
 
             Console.ReadKey();
         }
@@ -36,7 +36,29 @@ namespace Lecture._6
             {
                 Console.WriteLine(element);
             }
+        }
 
+        static void MaxArray()
+        {
+            Random rnd = new Random();
+            int max = 0; 
+            int[] someArray = new int[13];
+
+            for (int i = 0; i < someArray.Length; i++)
+            {
+                someArray[i] = rnd.Next();
+
+            }
+
+            for (int i = 0; i < someArray.Length; i++)
+            {
+                if (someArray[i]>max)
+                {
+                    max =  someArray[i];
+                }
+            }
+
+            Console.WriteLine("the max value = " + max);
         }
     }
 }
