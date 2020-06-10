@@ -29,13 +29,14 @@ namespace Lecture._6
                 Console.WriteLine(element);
             }
 
-            mixArray[1] = (int)mixArray[1] + 10;
-            mixArray[3] = (string)mixArray[3] + ", guys";
+            mixArray[0] = (int)mixArray[0] + 10;
+            mixArray[2] = (string)mixArray[2] + ", guys";
 
             foreach (object element in mixArray)
             {
                 Console.WriteLine(element);
             }
+
         }
     }
 }
