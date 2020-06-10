@@ -12,6 +12,8 @@ namespace Lecture._6
 
             MaxArray();
 
+            BoxingUnboxing();
+
             Console.ReadKey();
         }
 
@@ -59,6 +61,14 @@ namespace Lecture._6
             }
 
             Console.WriteLine("the max value = " + max);
+        }
+        static void BoxingUnboxing()
+        {
+            short someShort = 5;
+            System.SByte someSbyte = 0;
+            object someObject = someShort;
+            someSbyte = (System.SByte)someObject;
+            Console.WriteLine("Boxing unboxing omplited");
         }
     }
 }
