@@ -1,68 +1,83 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Square
 {
     class GeoFigure
     {
         public string Name { get; private set; }
-        public GeoFigure (string name)
-        { Name = name; }
+        public double MainParametr { get; private set; }
+
+        public GeoFigure(string name, double param)
+        {
+            Name = name;
+            if (param >= 1 && param <= 10) MainParametr = param;
+
+            else Console.WriteLine("the value is wrong");
+
+        }
+
+        public virtual void ShowResult()
+        {
+            Console.Write($"This is {Name}. It's type is {this.GetType()}. It's squere is ");
+        }
     }
+
     class Circle : GeoFigure
     {
-        private int _radius;
-
-        public int Radius
+        public Circle(string name, double radius) : base(name, radius) { }
+        public override void ShowResult()
         {
-            get { return _radius; }
-            set
-            {
-                if (value >= 1 && value <= 10)
-                    _radius = value;
-                else
-                    Console.WriteLine("wrong value");
-            }
+            base.ShowResult();
+            Console.WriteLine(Math.PI * MainParametr * MainParametr);
         }
-        public Circle(string name, int radius): base(name)
-        {
-            Radius = radius;
-        }
-        public void ShowSquere()
-        {
-            Console.WriteLine($"This is {Name}. It's type is{this.GetType()}. Squere is{Math.PI*Radius*Radius}");
-        }
-
-        class Squere:GeoFigure
-        {
-            private int _side;
-
-            public int Side
-            {
-                get { return _side; }
-                set
-                {
-                    if (value >= 1 && value <= 10)
-                        _side = value;
-                    else
-                        Console.WriteLine("wrong value");
-                }
-            }
-            public Squere(string name, int side) : base(name)
-            {
-                Side =side;
-            }
-            public void ShowSquere()
-            {
-                Console.WriteLine($"This is {Name}. It's type is{this.GetType()}. Squere is{Side*Side}");
-            }
-        }
-
     }
+
+    class Square : GeoFigure
+    {
+        public Square(string name, double side) : base(name, side) { }
+        public override void ShowResult()
+        {
+            base.ShowResult();
+            Console.WriteLine(MainParametr * MainParametr);
+        }
+    }
+
+    class Triangle : GeoFigure
+    {
+        public double Higth { get; private set; }
+
+        public Triangle(string name, double basis, double higth) : base(name, basis)
+        {
+            if (higth >= 1 && higth <= 10) Higth = higth;
+
+            else Console.WriteLine("the value is wrong");
+        }
+
+        public override void ShowResult()
+        {
+            base.ShowResult();
+            Console.WriteLine(MainParametr * Higth / 2);
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            List<GeoFigure> geoFigures = new List<GeoFigure>();
+            geoFigures.Add(new Circle("Circle 3", 1.5));
+            geoFigures.Add(new Circle("Circle 5", 2.5));
+            geoFigures.Add(new Square("Square 3", 3));
+            geoFigures.Add(new Square("Square 5", 5));
+            geoFigures.Add(new Triangle("Triangle", 3, 5));
+
+            foreach(GeoFigure geoFigure in geoFigures)
+            {
+                geoFigure.ShowResult();
+            }
+
+            Console.Read();
         }
     }
 }
