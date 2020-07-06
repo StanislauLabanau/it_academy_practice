@@ -4,16 +4,20 @@ namespace Lecture._12
 {
     public class Uniqueltem
     {
-        static int Id { get; set; }
+        public static int IdSt = default;
+        public int Id { get; set; }
 
-        static Uniqueltem()
-        {
-            Id = Id + 1;
-        }
-
-        public static void SetFirstId(int id)
+        public Uniqueltem(int id)
         {
             Id = id;
+            IdSt = id;
+            IdSt++;
+        }
+
+        public Uniqueltem()
+        {
+            Id = IdSt;
+            IdSt++;
         }
     }
 
@@ -21,10 +25,9 @@ namespace Lecture._12
     {
         static void Main(string[] args)
         {
-            Uniqueltem.SetFirstId(10);
-            Uniqueltem object1 = new Uniqueltem();
+            Uniqueltem object1 = new Uniqueltem(2);
             Uniqueltem object2 = new Uniqueltem();
-            Uniqueltem object3 = new Uniqueltem();
+            Uniqueltem object3 = new Uniqueltem(10);
         }
     }
 }
