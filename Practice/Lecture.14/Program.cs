@@ -22,7 +22,7 @@ namespace Lecture._14
         static void Main(string[] args)
         {
             Random random = new Random();
-            Rectangle[] rectangleArray = new Rectangle[] { };
+            Rectangle[] rectangleArray = new Rectangle[100];
             int dublicateCounter = default(int);
             int side = random.Next(1, 10);
             int sideStart = side;
