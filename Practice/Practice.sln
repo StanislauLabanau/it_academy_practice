@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LetterCounter", "LetterCoun
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lecture.6", "Lecture.6\Lecture.6.csproj", "{E08D8479-9B28-4DF7-AA82-3F7DB79B63FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Square", "Square\Square.csproj", "{C08867B9-EE36-4635-8362-3D254E79495D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Square", "Square\Square.csproj", "{C08867B9-EE36-4635-8362-3D254E79495D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lecture.12", "Lecture.12\Lecture.12.csproj", "{63BCBBBB-986D-4D33-A16C-550FFB591F11}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{C08867B9-EE36-4635-8362-3D254E79495D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C08867B9-EE36-4635-8362-3D254E79495D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C08867B9-EE36-4635-8362-3D254E79495D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63BCBBBB-986D-4D33-A16C-550FFB591F11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63BCBBBB-986D-4D33-A16C-550FFB591F11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63BCBBBB-986D-4D33-A16C-550FFB591F11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63BCBBBB-986D-4D33-A16C-550FFB591F11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
